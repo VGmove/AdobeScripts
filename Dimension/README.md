@@ -1,7 +1,6 @@
+![screenshot](.meta/screenshot.png)
+
 # Dimension
-
-![screenshot](/.meta/screenshot.png)
-
 The script measures the length of the selected lines and creates a measurement symbol from it. The measurements appear in a new layer.
 
 # Installation
