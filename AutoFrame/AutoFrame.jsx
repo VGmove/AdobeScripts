@@ -117,7 +117,7 @@ function ui() {
 	group_bProfile = group_layout_main.add('group', undefined);
 	group_bProfile.orientation = 'row';
 	bProfile_label = group_bProfile.add('statictext', undefined, 'Board Profile:');
-    bProfile_value = group_bProfile.add('edittext', undefined, '');
+    	bProfile_value = group_bProfile.add('edittext', undefined, '');
 	bProfile_value.minimumSize.width = 160;
 	bProfile_unit = group_bProfile.add('statictext', [0,15,20,35], '');
 	bProfile_unit.minimumSize.width = 30;
@@ -126,7 +126,7 @@ function ui() {
 	group_fefco = group_layout_main.add('group', undefined);
 	group_fefco.orientation = 'row';
 	fefco_label = group_fefco.add('statictext', undefined, 'FEFCO:');
-    fefco_value = group_fefco.add('edittext', undefined, '');
+    	fefco_value = group_fefco.add('edittext', undefined, '');
 	fefco_value.minimumSize.width = 160;
 	fefco_unit = group_fefco.add('statictext', [0,15,20,35], '');
 	fefco_unit.minimumSize.width = 30;
@@ -136,16 +136,16 @@ function ui() {
 	group_printType.orientation = 'row';
 	printType_label = group_printType.add('statictext', undefined, 'Print Type:');
 	printType_list = ['None', 'Flexo Print', 'Flexo Print HQ', 'Digital Print'];
-    printType_value = group_printType.add('dropdownlist', [0,0,0,20], printType_list);
+    	printType_value = group_printType.add('dropdownlist', [0,0,0,20], printType_list);
 	printType_value.minimumSize.width = 160;
-    printType_value.selection = 0;
+    	printType_value.selection = 0;
 	printType_unit = group_printType.add('statictext', [0,15,20,35], '');
 	printType_unit.minimumSize.width = 30;
 
 	group_liniatura = group_layout_main.add('group', undefined);
 	group_liniatura.orientation = 'row';
 	liniatura_label = group_liniatura.add('statictext', undefined, 'Liniatura:');
-    liniatura_value = group_liniatura.add('edittext', undefined, '');
+   	liniatura_value = group_liniatura.add('edittext', undefined, '');
 	liniatura_value.minimumSize.width = 160;
 	liniatura_unit = group_liniatura.add('statictext', [0,15,20,35], 'lpi');
 	liniatura_unit.minimumSize.width = 30;
@@ -155,7 +155,7 @@ function ui() {
 	group_trapping = group_layout_main.add('group', undefined);
 	group_trapping.orientation = 'row';
 	trapping_label = group_trapping.add('statictext', undefined, 'Trapping:');
-    trapping_value = group_trapping.add('edittext', undefined, '');
+    	trapping_value = group_trapping.add('edittext', undefined, '');
 	trapping_value.minimumSize.width = 160;
 	trapping_unit = group_trapping.add('statictext', [0,15,20,35], 'mm');
 	trapping_unit.minimumSize.width = 30;
@@ -165,7 +165,7 @@ function ui() {
 	group_bias = group_layout_main.add('group', undefined);
 	group_bias.orientation = 'row';
 	bias_label = group_bias.add('statictext', undefined, 'Bias:');
-    bias_value = group_bias.add('edittext', undefined, '');
+    	bias_value = group_bias.add('edittext', undefined, '');
 	bias_value.minimumSize.width = 160;
 	bias_unit = group_bias.add('statictext', [0,15,20,35], 'mm');
 	bias_unit.minimumSize.width = 30;
@@ -227,9 +227,9 @@ function ui() {
 	group_selectLayer.orientation = 'row';
 	selectLayer_label = group_selectLayer.add('statictext', undefined, 'Place to:');
 	selectLayer_list = ['New Layer'];
-    selectLayer_value = group_selectLayer.add('dropdownlist', [0,0,0,0], selectLayer_list);
+    	selectLayer_value = group_selectLayer.add('dropdownlist', [0,0,0,0], selectLayer_list);
 	selectLayer_value.minimumSize.width = 200;
-    selectLayer_value.selection = 0;
+    	selectLayer_value.selection = 0;
 	for (var i=0;i<doc.layers.length;i++) {
 		selectLayer_value.add('item', doc.layers[i].name);
 	}
@@ -237,7 +237,7 @@ function ui() {
 	group_newLayer = group_place_main.add('group', undefined);
 	group_newLayer.orientation = 'row';
 	newLayer_label = group_newLayer.add('statictext', undefined, 'Layer Name:');
-    newLayer_value = group_newLayer.add('edittext', undefined, 'Frame');
+    	newLayer_value = group_newLayer.add('edittext', undefined, 'Frame');
 	newLayer_value.minimumSize.width = 200;
 	newLayer_value.enabled = true;
 	selectLayer_value.onChange = function() {
@@ -258,7 +258,7 @@ function ui() {
 	scaleFrame_slider.minvalue = 45;
 	scaleFrame_slider.maxvalue = 100;
 	scaleFrame_slider.value = 85;
-    scaleFrame_value = group_scaleFrame.add('statictext', undefined, scaleFrame_slider.value);
+    	scaleFrame_value = group_scaleFrame.add('statictext', undefined, scaleFrame_slider.value);
 	scaleFrame_value.minimumSize.width = 20;
 	scaleFrame_unit = group_scaleFrame.add('statictext', undefined, '%');
 	scaleFrame_unit.minimumSize.width = 10;
@@ -313,10 +313,10 @@ function start() {
 	doc_vb = doc.visibleBounds;
 
 	placed_svg = main_layer.groupItems.createFromFile(template_svg);
-    placed_svg.name = 'Frame';
+    	placed_svg.name = 'Frame';
 
 	vb_width = (doc_vb[2] - doc_vb[0]) / 2.834645669;
-    placed_svg_width = placed_svg.width / 2.834645669;
+    	placed_svg_width = placed_svg.width / 2.834645669;
 	x = ((Math.round(scaleFrame_slider.value) * vb_width) / placed_svg_width) - 100;
 	placed_svg.resize(
 	100 + x, // x
@@ -331,12 +331,12 @@ function start() {
 	padding = 20;
 	bottom_padding = 40;
 	placed_svg.position = [doc_vb[0], doc_vb[3] - bottom_padding];
-    position = [doc_vb[0] - padding, 
+    	position = [doc_vb[0] - padding, 
 				doc_vb[1] + padding, 
 				doc_vb[2] + padding, 
 				doc_vb[3] - placed_svg.height - (bottom_padding + padding)];
-    doc.artboards[doc.artboards.getActiveArtboardIndex()].artboardRect = position;
-    app.executeMenuCommand ('fitin');
+   	doc.artboards[doc.artboards.getActiveArtboardIndex()].artboardRect = position;
+   	app.executeMenuCommand ('fitin');
 
 	group_placed_svg = main_layer.groupItems[placed_svg.name];
 	text_frames = group_placed_svg.textFrames;
